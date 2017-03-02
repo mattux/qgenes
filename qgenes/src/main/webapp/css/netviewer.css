@@ -1,0 +1,385 @@
+.sub-nav
+{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.sub-nav a
+{
+  font-size: 3.5em !important;
+  margin:0 !important;
+  padding:0 0.2rem 0 0.2rem !important;
+  color:#222 !important;
+}
+
+.sub-nav dd.active a
+{
+  color:#FFF !important;
+}
+
+div#netviewer-container
+{
+  /*border: 1px solid #ccc;*/
+  /*border-bottom:none;*/
+  margin-top:20px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  width:100%;
+  height:85vh;
+  box-shadow: 0 1px 2px #bbb;
+}
+
+div#netviewer-graph
+{
+  width:100%;
+  height:80%;
+  background:#FAFAFA;
+  /*border-bottom: 1px solid #ddd;*/
+}
+
+#request-info
+{
+  width:100%;
+
+  height:10%;
+  overflow: auto;
+
+  background:#FAFAFA;
+  border-radius:inherit;
+  padding-top: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  
+  /*border-bottom: 1px solid #ddd;*/
+/*
+  display:none;
+*/
+}
+
+/*
+.r-info
+{
+  display: inline-block;
+}
+*/
+
+#genes-request li:not(.req-info-type), #concepts-request li:not(.req-info-type),
+#depth-request li:not(.req-info-type), #strength-request li:not(.req-info-type)
+{
+  font-size: 0.9em;
+/*
+  white-space: nowrap;
+*/
+}
+
+#request-info #concepts-request > .r-info > li:not(.req-info-type) > ul > li
+{
+  margin-right: 0.3em;
+  padding:0px 4px 0px 4px;
+  border-radius: 2px;
+  background:#FFF0D0 !important;
+  border: 1px solid #FFF;
+}
+
+.req-info-type
+{
+  margin-right: 0.5em;
+}
+
+
+.req-info-type span, .graph-info-counter
+{
+  font-weight: 400 !important;
+  display: inline-block;
+  color:#FFFFFF !important;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  line-height: 2.1;
+  text-align: center;
+  /*margin-bottom: 10px;*/
+}
+
+.req-info
+{
+  display:inline-block;
+  /*margin-left:20px;*/
+  
+  /*line-height: 3em;*/
+/*
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: transparent;
+*/
+  /*font-family: "Fira Mono";*/
+}
+
+.req-info ul
+{
+  list-style: none;
+  line-height: 2.1;
+  margin-right: 1em;
+}
+
+.req-info ul > li
+{
+  float: left;
+
+}
+
+#genes-request
+{
+/*
+  border-bottom-color: #0061CB;
+*/
+  border-bottom-color: #FE8A71;
+}
+
+#concepts-request
+{
+  border-bottom-color: #D75B04;
+}
+
+#strength-request
+{
+  border-bottom-color: #236D9B;
+}
+
+#depth-request
+{
+  border-bottom-color: #2E6BC8;
+}
+
+
+#netviewer-controls
+{
+
+  /*background:rgb(234, 234, 234);*/
+  background: #FAFAFA;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  /*  padding:5px 10px 0px 20px;*/
+/*
+  box-shadow: 0 1px 2px #bbb;
+*/
+
+  padding-left:2em;
+  padding-right:2em;
+  border-top:none;
+  /*z-index:99;*/
+  /*line-height: 1;*/
+  margin:0 !important;
+  height: 10%;
+
+}
+
+#netviewer-controls #controls
+{
+  text-align:right;
+  color: #666;
+  margin:0 !important;
+}
+
+
+#netviewer-controls i
+{
+  border-bottom:none;
+  color:#222;
+  cursor:pointer;
+  text-decoration: none;
+  font-size:2em;
+  line-height:2;
+  /*position: relative;
+  bottom: 0.18em;*/
+  margin:0 !important;
+
+}
+
+.graph-info
+{
+  display:inline-block;
+  /*margin-left:2px;*/
+  margin-right:1em;
+  margin-top:0px;
+  padding-top:5%;
+  color: #333;
+}
+
+.graph-info-counter
+{
+  background: #676767;
+}
+
+
+/* INFO AREA*/
+#info-area
+{
+  background:transparent;
+  background:#FFF;
+  height:90vh;
+  overflow: hidden;
+  /*visibility: hidden;*/
+  display:none;
+  box-shadow: -1px 0 2px #bbb;
+}
+
+
+#info-area .content
+{
+  transition: all 200ms ease-in-out;
+  height: 82vh;
+
+}
+
+#info-area .rel
+{
+  /*max-height: 69.6vh;*/
+  max-height:69.6vh;
+}
+
+/*
+#info-area p
+{
+  margin-bottom:4px;
+  font-size:0.9rem;
+}
+*/
+
+#info-area span, #info-area li
+{
+  font-size:0.9rem;
+  color:#000 !important;
+}
+
+#info-area a
+{
+  color:#FFF;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  font-family: "Fira Sans", "sans-serif";
+  font-weight: 400;
+  /* font-size: 0.4rem; */
+}
+
+#info-area a.node
+{
+  background:#AC2860;
+  border-bottom: 1px solid #700030;
+}
+
+#info-area a.edge
+{
+  background:#006270;
+  border-bottom: 1px solid #0C454D;
+}
+
+#info-area *
+{
+  transition: all 200ms ease-in-out;
+}
+
+.content
+{
+  /*max-height:65vh;*/
+  overflow:auto;
+}
+
+.info-field
+{
+  text-align:right !important;
+}
+
+#info-area span.title
+{
+  border-bottom:1px solid #ccc;
+  text-align:center;
+  font-weight:bold;
+  display:block;
+}
+
+#info-area div
+{ 
+  padding-bottom:10px;
+}
+
+.in-relation-with .row
+{
+  margin-bottom:0;
+}
+
+div.rel-to, div.rel-to > div
+{
+  padding-bottom: 0 !important;
+}
+
+.rel-to div
+{
+  margin-bottom:0;
+}
+
+/*
+.dest-node:hover
+{
+  color:#0061CB;
+}
+*/
+
+.rel-to-name
+{
+  font-weight: bold;
+  cursor: pointer;
+  padding:0px !important;
+}
+
+.rel-to-name:hover
+{
+  color: #AC2860;
+}
+
+/*
+LINKS
+*/
+a.netviewer
+{
+  color: inherit !important;
+/*
+  border-bottom: 1px dashed #D75B04;
+*/
+  padding: 0px !important;
+  font-weight: 300 !important;
+}
+
+a.netviewer:hover
+{
+  border-bottom-style: solid;
+}
+
+
+ul.infobox-concepts-pretty-print
+{
+  list-style: none;
+  line-height: 1.3;
+}
+
+ul.infobox-concepts-pretty-print li
+{
+  border: 3px solid transparent;
+}
+
+ul.req-concepts-pretty-print
+{
+  list-style: none;
+  /*line-height: 2.1;*/
+  float: left;
+}
+
+/*ul.req-concepts-pretty-print li
+{
+  float: left;
+  padding: 0px 4px 0px 4px;
+  background:#FFF0D0 !important;
+  border-radius:2px;
+  border:2px solid #FFF;
+}*/
+
+

@@ -1,0 +1,323 @@
+/*
+EFFECTS
+*/
+.range-slider-handle, .button
+{
+  transition: background-color 200ms ease-in-out;
+}
+
+input, textarea, select
+{
+  transition: border-color 200ms ease-in-out;
+}
+
+.tagit
+{
+  transition: all 200ms ease-in-out;
+}
+
+/*
+COLOR
+*/
+.range-slider-handle, .button, option:hover
+{
+  background:#79A627 !important;
+}
+
+div#g-list, div#c-list
+{
+  padding:0;
+}
+
+.chosen-items-list h2
+{
+  color: #777;
+}
+
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color:#transparent;
+}
+
+select:hover
+{
+  background-color:#transparent;
+  cursor:pointer;
+}
+
+
+/*
+FORM
+*/
+ul.tagit
+{
+  padding-top: 10px;
+  border: none !important;
+  border-top: 1px solid #ddd !important;
+  background:#FAFAFA !important;
+  font-family: "Fira Mono" !important;
+  height:25vh;
+}
+
+ul.tagit-big
+{
+  height:70vh;
+}
+
+div#choose-items
+{
+  padding-top:30px;
+  margin:0;
+}
+
+
+.section-title > h2
+{
+  color:#888;
+  text-align:center;
+  margin:0;
+}
+
+
+textarea
+{
+  resize:none;
+  height:113px;
+  font-size: 1em;
+  margin-bottom:0;
+  border-radius:4px;
+  background:#transparent;
+}
+
+select, textarea
+{
+  border:1px solid #cecece;
+  border-radius:4px;
+  box-shadow:none;
+}
+
+textarea:focus, textarea:hover,
+input:focus, input:hover,
+select:focus, select:hover
+{
+  border-color:#79A627;
+}
+
+
+
+#submit
+{
+  margin-top: 5em !important;
+}
+
+/*
+ELEMENTS LIST
+*/
+span.request-list
+{
+  font-family:"Fira Mono";
+  font-size:1rem;
+  display:inline-block;
+  padding:10px;
+  margin-right:10px;
+  margin-bottom:10px;
+  color:#transparent;
+  font-weight:400;
+  border-radius:4px;
+}
+
+span.genes-list
+{
+  background:#0061CB;
+}
+
+span.concepts-list
+{
+  background:#D75B04;
+}
+
+span.delete-elem-list
+{
+  display:inline-block;
+  margin-left:15px;
+  cursor:pointer;
+}
+
+div.choose-items-container
+{
+  padding: 10px 15px 10px 15px;
+  border-radius:2px;
+  background: #FAFAFA;
+  box-shadow: 0 1px 2px #bbb;
+  margin-bottom:20px;
+}
+
+
+/*
+ * MAIN CONTAINER
+*/
+div#requestpage-container .row
+{
+  width: 100% !important;
+}
+
+div#requestpage-container
+{
+  margin:auto;
+}
+
+.ui-autocomplete
+{
+  max-height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100vh;
+  border-radius:2px;
+
+  box-shadow:0 1px 2px #bbb;
+
+  z-index:99;
+}
+
+.ui-widget-content, .ui-autocomplete-input
+{
+  font-size:0.9rem;
+}
+
+
+/*
+RANGE SLIDERS
+*/
+#query-params
+{
+  padding-right:0;
+  padding-top:40px
+}
+
+.query-params-title
+{
+  padding-top:0.5rem !important;
+  padding-bottom:0.5rem !important;
+  padding:0 !important;
+}
+
+.query-params-title > label
+{
+  font-size: 1rem !important;
+  text-align: center;
+  padding:0 5%;
+}
+
+.query-params-title h6
+{
+  color: #777;
+  margin:0;
+}
+
+.range-slider
+{
+  margin-top:0 !important;
+}
+
+
+span#sliderOutputStrength, span#sliderOutputDepth
+{
+  border-radius: 3px;
+  color:#FFF;
+  border-radius: 3px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size:1.4em;
+  font-weight:400;
+  font-family: "Fira Mono", monospace;
+}
+
+span#sliderOutputStrength
+{
+  background: #236D9B;
+  text-shadow: 0px 1px #093A58;
+}
+
+span#sliderOutputDepth
+{
+  background:#2E6BC8;
+  text-shadow: 0px 1px #13366B;
+}
+
+
+.button:hover, .range-slider-handle:hover, .button:focus,
+.range-slider-handle:focus
+{
+  background: #435E13 !important;
+}
+
+
+.range-slider.vertical-range
+{
+  padding-top:10px;
+  margin-left: 50%;
+  margin-bottom:0;
+}
+
+
+/*
+ * HEADERS
+*/
+div.req-header > span
+{
+  font-weight: 300;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+span.header
+{
+  font-weight: 400 !important;
+  display: inline-block;
+  color:#FFFFFF !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 2.1rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+span.genes-header
+{
+  background:#FE8A71;
+}
+
+span.concepts-header
+{
+  background: #D75B04;
+}
+
+span.depth-header
+{
+  background: #2E6BC8;
+}
+
+span.strength-header
+{
+  background: #236D9B;
+}
+
+.request-counter
+{
+  display: inline-block;
+  background:#ddd;
+  color: #444;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 32px;
+  text-align:center;
+}

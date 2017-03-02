@@ -1,0 +1,270 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QgeneS - Query gene Similarity</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/sharedstyle.css" />
+    <link rel="stylesheet" href="css/requestpage.css" />
+    <link rel="stylesheet" href="css/netviewer.css" />
+    <link rel="stylesheet" href="js/tag-it/css/jquery.tagit.css" />
+    <link rel="stylesheet" href="js/tag-it/css/tagit.ui-qgenes.css" />
+    <link rel="stylesheet" href="css/font/Fira/fira.css" />
+    <link rel="stylesheet" href="css/foundation-icons/foundation-icons.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <div class="loading">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <img src="img/logo.png" title="QgeneS - Query gene Similarity" alt="QgeneS"  />
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="active"><a id="new-search">New Search</a></li>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="container">
+      <div id="sidebar" class="icon-bar vertical five-up">
+
+<!--
+ADD GENES & CONCEPTS
+-->
+      <a class="item request-menu-entry" id="add-genes">
+        <i class="fi-plus"></i>
+        <span class="sidebar-entry">Genes</span>
+      </a>
+
+      <a class="item request-menu-entry" id="add-concepts">
+        <i class="fi-plus"></i>
+        <span class="sidebar-entry">Concepts</span>
+      </a>
+
+      <a class="item netview-menu-entry" id="edit-search">
+        <i class="fi-arrow-left"></i>
+        <span class="sidebar-entry">Edit search</span>
+      </a>
+      </div>
+
+
+      <div id="requestpage-container">
+        <form name="form" id="form" method="post">
+          <input type="hidden" name="data" />
+
+          <div class="row">
+            <div class="large-9 columns">
+
+              <div class="row chosen-items-list" id="choose-items">
+
+                <div class="large-12 medium-12 small-12 columns"  id="g-list">
+                  <div class="choose-items-container">
+                    <div class="section-title">
+                      <div class="req-header row">
+                        <div class="small-11 columns req-header">
+                        <span class="header genes-header">G</span>
+                          <span>enes</span>
+                        </div>
+                        <div class="small-1 columns">
+                          <span id="request-genes-counter" class="request-counter">0</span>
+                        </div>
+                      </div>
+                      <div id="genes-list-container" class="choose-items">
+                        <input id="genes-input" name="genes-input" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="large-12 medium-12 small-12 columns" id="c-list">
+                  <div class="choose-items-container">
+                    <div class="section-title">
+                      <div class="req-header row">
+                        <div class="small-11 columns req-header">
+                          <span class="header concepts-header">C</span>
+                          <span>oncepts</span>
+                        </div>
+                        <div class="small-1 columns">
+                          <span id="request-concepts-counter" class="request-counter">0</span>
+                        </div>
+                      </div>
+                    </div>
+                  <div id="concepts-list-container" class="choose-items">
+                    <input id="concepts-input" name="concepts-input" />
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="large-3 columns right-sidebar">
+              <div id="query-params">
+                <div class="row ">
+                  <div class="small-6 columns query-params-title">
+                    <label id="labelstrength" for="sliderOutputStrength">
+                        <div class="req-header">
+                        <span class="header strength-header">S</span>
+                        <span>trength</span>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="small-6 columns query-params-title">
+                    <label id="labeldepth" for="sliderOutputDepth">
+                      <div class="req-header">
+                        <span class="header depth-header">D</span>
+                        <span>epth</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-6 columns sldrs">
+                    <div id="strength" class="range-slider vertical-range radius" role="slider" tabindex="0" data-slider data-options="display_selector: #sliderOutputStrength; start:0.1; end: 1; step:0.1; vertical: true;" aria-labelledby="labeltreshold" aria-valuemax="1" aria-valuemin="0.1">
+                      <span class="range-slider-handle" role="slider" tabindex="0">Min</span>
+                      <span class="range-slider-active-segment"></span>
+                      <input type="hidden">
+                    </div>
+                    <div style="text-align:center;">
+                      <span id="sliderOutputStrength"></span>
+                    </div>
+                  </div>
+                  <div class="small-6 columns sldrs">
+                    <div id="depth" class="range-slider vertical-range radius" role="slider" tabindex="0" data-slider data-options="display_selector: #sliderOutputDepth; start:1; end: 3; step:1; vertical: true;" aria-labelledby="labeldepth" aria-valuemax="5" aria-valuemin="1">
+                      <span class="range-slider-handle" role="slider" tabindex="0">Max</span>
+                      <span class="range-slider-active-segment"></span>
+                      <input type="hidden">
+                    </div>
+                    <div style="text-align:center;">
+                      <span id="sliderOutputDepth">&ge;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class=" large-12 medium-12 small-6 large-centered medium-centered small-centered columns" style="text-align:center;">
+                  <input id="submit" type="submit" value="Show Network" class="button radius" disabled="disabled" />
+                </div>
+              </div>
+            </div>
+
+
+          </div> <!-- END ROW -->
+
+        </div> <!-- END REQUEST PAGE CONTAINER -->
+
+      </form>
+
+      <div id="resultpage-container" style="display:none;">
+        <div class="row">
+          <div class="small-9 columns">
+            <div id="netviewer-container">
+              <div id="request-info">
+                <div id="genes-request" class="req-info">
+                  <ul class="r-info"><li class="req-info-type"><span class="genes-header">G</span></li></ul>
+                </div>
+                <div id="concepts-request" class="req-info">
+                  <ul class="r-info"><li class="req-info-type"><span class="concepts-header">C</span></li></ul>
+                </div>
+
+                <div id="strength-request" class="req-info">
+                  <ul class="r-info"><li class="req-info-type"><span class="strength-header">S</span></li></ul>
+                </div>
+
+                <div id="depth-request" class="req-info">
+                  <ul class="r-info"><li class="req-info-type"><span class="depth-header">D</span></li></ul>
+                </div>
+              </div>
+
+              <!-- graph container -->
+              <div id="netviewer-graph">
+              </div>
+
+              <div id="netviewer-controls">
+                <div class="row">
+                  <div class="small-4 columns">
+                    <div id="nodes-num" class="graph-info"></div>
+                    <div id="relationships-num" class="graph-info"></div>
+                  </div>
+                  <div class="small-8 columns" id="controls">
+                    <i id="center-net-view" class="fi-arrows-in has-tip tip-top" data-tooltip aria-haspopup="true" title="Center the network in the view"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="small-3 columns right-sidebar">
+              <div class="info-area-hint" id="netviewer-hint"><h6><p>Click on a node or on an edge to display informations about it</p><p>Drag a node to move it</p><p>Drag the background or an edge to move the whole network</p></h6></div>
+            <ul id="info-area" class="accordion" data-accordion></ul>
+
+          </div>
+        </div>
+      </div> <!-- END RESULT PAGE -->
+    </div> <!-- END CONTAINER -->
+    <script src="js/genes.js"></script>
+    <script src="js/labels.js"></script>
+    <script src="js/labels_cui_association.js"></script>
+    <script src="js/cui_labels_association.js"></script>
+    <script src="js/cui.js"></script>
+    <script src="js/visjs/vis.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/jquery-ui/jquery-ui.js"></script>
+    <script src="js/tag-it/js/tag-it.js"></script>
+    <script src="js/qgenesrequest.js"></script>
+    <script src="js/sharedfeatures.js"></script>
+    <script src="js/netviewer.js"></script>
+    <script src="js/form.js"></script>
+    <script>
+      $(document).foundation();
+      //~ setTxtareaPlaceholder();
+      //~ autocomplete();
+      genesAutocomplete();
+      conceptsAutocomplete();
+      //~ changeTxtareaPlaceholder();
+      submitForm();
+
+
+      $(document).ready(
+      function()
+      {
+        //~ QgenesRequest.reset();
+
+        $('body').bind('beforeunload',function(){
+          QgenesRequest.reset();
+          $("#genes-input").tagit("removeAll");
+          $("#concepts-input").tagit("removeAll");
+        });
+
+        $('div#depth').foundation('slider', 'set_value', 1);
+        $('div#strength').foundation('slider', 'set_value', 0.5);
+
+        $("div#requestpage-container, div#resultpage-container").css("margin-left", $("#sidebar").width());
+
+        //~ //SLIDERS POSITION
+        resetRequestSliders();
+
+        $(window).resize(function()
+        {
+          resetRequestSliders();
+        });
+
+
+
+      });
+
+    </script>
+  </body>
+</html>

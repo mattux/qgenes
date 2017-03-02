@@ -1,0 +1,136 @@
+
+/* Optional scoped theme for tag-it which mimics the zendesk widget.
+   modified to match the Qgenes graphic style.
+*/
+
+
+ul.tagit {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    background: #FAFAFA;
+    padding:10px;
+    font-family: "Fira Mono", monospace;
+    overflow-y:auto;
+    overflow-x:hidden;
+    background:#FFF;
+}
+ul.tagit li.tagit-choice {
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background: none;
+    background-color: #DEE7F8;
+
+    font-weight: normal;
+    text-overflow: ellipsis;
+}
+ul.tagit li.tagit-choice .tagit-label:not(a) {
+    color: #FFFFFF;
+    font-family: "Fira Mono", monospace;
+    font-size:1rem;
+    margin-right: 0.5rem;
+}
+ul.tagit li.tagit-choice a.tagit-close {
+    text-decoration: none;
+}
+ul.tagit li.tagit-choice .tagit-close {
+    right: 0;
+}
+ul.tagit li.tagit-choice .ui-icon {
+    display: none;
+}
+ul.tagit li.tagit-choice .tagit-close .text-icon {
+    display: inline;
+    font-family: "Fira Mono";
+    font-size: 2rem;
+ul.tagit li.tagit-choice a.tagLabel:hover,
+ul.tagit li.tagit-choice a.tagit-close .text-icon:hover {
+    color: #FFF;
+}
+ul.tagit input[type="text"] {
+    color: #333333;
+    background: none;
+    text-overflow: ellipsis;
+}
+.ui-widget {
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+}
+
+ul.tagit:hover
+{
+    border-color: #79A627;
+}
+
+#genes-list-container .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable
+{
+    background:#FE8A71;
+    border:none;
+    text-shadow: 0 1px #D0644E;
+}
+
+#concepts-list-container .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable
+{
+    background:#D75B04;
+    border:none;
+    text-shadow: 0 1px #8C3A00;
+}
+
+
+/* Forked from a jQuery UI theme, so that we don't require the jQuery UI CSS as a dependency. */
+.tagit-autocomplete.ui-autocomplete { position: absolute; cursor: default; }
+* html .tagit-autocomplete.ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+.tagit-autocomplete.ui-menu {
+    list-style:none;
+    padding: 2px;
+    margin: 0;
+    display:block;
+    float: left;
+    text-overflow: ellipsis;
+    font-family: "Fira Sans";
+    font-size: 1em;
+    box-shadow: 0 1px 2px #999;
+    color: #FFF !important;;
+    font-weight: 250 !important;
+    
+}
+.tagit-autocomplete.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+.tagit-autocomplete.ui-menu .ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+.tagit-autocomplete.ui-menu .ui-menu-item a {
+    text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+    zoom:1;
+}
+.tagit-autocomplete .ui-menu .ui-menu-item a.ui-state-hover,
+.tagit-autocomplete .ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+}
+.tagit-autocomplete.ui-widget-content { background: #8BA44B; color: #FFFFFF; }
+.tagit-autocomplete.ui-corner-all, .tagit-autocomplete .ui-corner-all { border-radius: 2px; }
+.tagit-autocomplete .ui-state-hover, .tagit-autocomplete .ui-state-focus { background: #485623; font-weight: normal; color: #FFFFFF; border-radius:2px; }
+.tagit-autocomplete .ui-state-active  { border: 1px solid #aaaaaa; }
+
+.tagit-autocomplete .ui-widget-content { border: 1px solid #aaaaaa; }
+.tagit .ui-helper-hidden-accessible { position: absolute !important; clip: rect(1px,1px,1px,1px); }
+
+.ui-helper-hidden-accessible { display:none;}
+
+.ui-widget-content .ui-autocomplete-input
+{
+    width:150% !important;;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
