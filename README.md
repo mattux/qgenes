@@ -1,7 +1,5 @@
 # QgeneS
-(Query genes Similarity)
-
-QgeneS is a tool that lets you search for semantic relationships between genes. The result is shown as an interactive network.
+QgeneS (Query genes Similarity) is a tool that lets you search for semantic relationships between genes. The result is shown as an interactive network.
 
 
 ## Getting ready (on a Linux machine)
@@ -19,7 +17,7 @@ QgeneS is a tool that lets you search for semantic relationships between genes. 
 The [OpenJDK](http://openjdk.java.net/) package inside the repositories of your distribution should be OK. Otherwise, [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html) you can find Java SE.
 
 ### 3) Install Neo4j
-Get it from `https://neo4j.com/download/`.
+Get it from [http://neo4j.com/download/](https://neo4j.com/download/).
 
 Extract in a directory of your choice (e.g. `/opt/`).
 
@@ -30,10 +28,10 @@ Extract in a directory of your choice (e.g. `/opt/`).
     - change the line `dbms.security.auth_enabled=true` in `dbms.security.auth_enabled=false`
 
 ### 3) Install Glassfish
-Download it ([https://glassfish.java.net/download.html](https://glassfish.java.net/download.html)) and extract the archive in a directory (e.g. `/opt/`).
+Download it ([http://glassfish.java.net/download.html](https://glassfish.java.net/download.html)) and extract the archive in a directory (e.g. `/opt/`).
 
 ### 4) Install Maven
-If it is not present in your distribution's repo, take it from here: [https://maven.apache.org/download.html](https://maven.apache.org/download.html)
+If it is not present in your distribution's repo, take it from here: [http://maven.apache.org/download.html](https://maven.apache.org/download.html)
 
 And here [how to install manually](https://maven.apache.org/download.html).
 
