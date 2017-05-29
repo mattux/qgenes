@@ -23,12 +23,12 @@ Extract in a directory of your choice (e.g. `/opt/`).
 
 **Note**: QgeneS assumes that:
 - the database server URL is `localhost:7474` (is the default configuration)
-- the authentication is disabled; to disable it:
+- the **authentication** is **disabled**; to disable it:
     - open `/opt/neo4j-community-{YOUR_VERSION}/conf/neo4j.conf`
-    - change the line `dbms.security.auth_enabled=true` in `dbms.security.auth_enabled=false`
+    - the line `dbms.security.auth_enabled` must be `=false`
 
-### 3) Install Glassfish
-Download it ([http://glassfish.java.net/download.html](https://glassfish.java.net/download.html)) and extract the archive in a directory (e.g. `/opt/`).
+### 3) Install Glassfish 4
+Download the _Full Platform_ flavor of Glassfish 4 ([https://javaee.github.io/glassfish/download](https://javaee.github.io/glassfish/download)) and extract the archive in a directory (e.g. `/opt/`).
 
 ### 4) Install Maven
 If it is not present in your distribution's repo, take it from here: [http://maven.apache.org/download.html](https://maven.apache.org/download.html)
