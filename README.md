@@ -1,16 +1,16 @@
 # QgeneS
 QgeneS (Query genes Similarity) is a tool that lets you search for semantic relationships between genes. The result is shown as an interactive network.
 
-## NEW! Setup script!
+## Setup script
 
-I have written a script that setup the db, build the source code, run the servers and deploy qgenes.
+This script setups the db, it builds the source code, it runs the servers and it deploy QgeneS.
 
 ### Usage:
 ```
 ./setup.sh [OPTION]
 
--h    Display a help message."
--c    Force the check of the dependencies."
+-h    Display a help message.
+-c    Force the check of the dependencies.
 ```
 
 ## Getting ready (on a Linux machine)
@@ -46,7 +46,7 @@ If it is not present in your distribution's repo, take it from here: [http://mav
 
 And here [how to install manually](https://maven.apache.org/download.html).
 
-## Build and run (on a Linux machine)
+## Build and run, manually (on a Linux machine)
 #### Populate and run the database
 
 Download the datasets from here: [https://gitlab.com/mattux/qgenes_datasets/tree/master](https://gitlab.com/mattux/qgenes_datasets/tree/master).
