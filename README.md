@@ -1,14 +1,25 @@
 # QgeneS
 QgeneS (Query genes Similarity) is a tool that lets you search for semantic relationships between genes. The result is shown as an interactive network.
 
+## NEW! Setup script!
+
+I have written a script that setup the db, build the source code, run the servers and deploy qgenes.
+
+### Usage:
+```
+./setup.sh [OPTION]
+
+-h    Display a help message."
+-c    Force the check of the dependencies."
+```
 
 ## Getting ready (on a Linux machine)
 
 ### Requires:
 - Java JDK (Oracle or OpenJDK), min. 1.7
-- Maven
-- Glassfish
-- Neo4j (from 2.2 to the latest [3.1, currently])
+- Maven (min 3.0)
+- Glassfish (min. 4)
+- Neo4j (from 2.2 to 3.2 - with above versions QgeneS may not work properly)
 
 ### 1) Download the source code
     $ git clone https://github.com/mattux/qgenes.git
